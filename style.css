@@ -1,0 +1,7 @@
+.menu-item {
+    opacity: 0;
+}
+
+.menu-item .visible {
+    opacity: 1;
+}
