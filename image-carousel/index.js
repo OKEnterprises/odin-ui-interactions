@@ -5,13 +5,13 @@ const navTwo = document.querySelector("#nav-2")
 const leftArr = document.querySelector(".left-arrow");
 const rightArr = document.querySelector(".right-arrow")
 
-const selectedImage = document.querySelector(".selected-image");
+const selectedImg = document.querySelector(".selected-img");
 
 let selected = 0;
 
-const images = ['image-carousel/images/bailey-zindel-NRQV-hBF10M-unsplash.jpg',
-                'image-carousel/images/benjamin-voros-phIFdC6lA4E-unsplash.jpg',
-                'image-carousel/images/cristina-gottardi-CSpjU6hYo_0-unsplash.jpg'];
+const images = ['./images/bailey-zindel-NRQV-hBF10M-unsplash.jpg',
+                './images/benjamin-voros-phIFdC6lA4E-unsplash.jpg',
+                './images/cristina-gottardi-CSpjU6hYo_0-unsplash.jpg'];
 
 const navs = [navZero, navOne, navTwo];
 
@@ -24,7 +24,7 @@ function highlightNav(idx, navList) {
 
 function displayImg(idx) {
     const src = images[idx];
-    selectedImage.src = src;
+    selectedImg.src = src;
 }
 
 function highlightAndDisplay(idx, navList) {
@@ -48,12 +48,14 @@ navTwo.addEventListener('click', () => {
 });
 
 leftArr.addEventListener('click', () => {
-    selected--;
+    if (selected === 0) selected = 2;
+    else selected--;
+    console.log(selected);
     highlightAndDisplay(selected, navs);
 });
 
 rightArr.addEventListener('click', () => {
-    selected++;
+    selected = (selected + 1) % 3;
     highlightAndDisplay(selected, navs);
 });
 
