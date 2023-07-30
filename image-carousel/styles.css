@@ -1,4 +1,30 @@
-.nav-dot-container
+.carousel {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
+}
+
+.left-arrow {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+.selected-image {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+.right-arrow {
+    grid-row: 1 / 2;
+    grid-column: 3 / end;
+}
+
+.nav-dot-container {
+    display: flex;
+    align-items: center;
+    grid-row: 2 / end;
+    grid-column: 2 / 3;
+}
 
 .nav-dot {
     opacity: 0.5;
